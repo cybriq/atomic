@@ -1,4 +1,4 @@
-// Copyright (c) 2016 Uber Technologies, Inc.
+// Copyright (c) 2020 Uber Technologies, Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,26 +18,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-package atomic_test
+package atomic
 
-import (
-	"fmt"
+import "strconv"
 
-	"github.com/cybriq/atomic"
-)
+//go:generate bin/gen-atomicwrapper -name=Float32 -type=float32 -wrapped=Uint64 -pack=math.Float32bits -unpack=math.Float32frombits -cas -json -imports math -file=float32.go
 
-func Example() {
-	// Uint32 is a thin wrapper around the primitive uint32 type.
-	var atom atomic.Uint32
+// Add atomically adds to the wrapped float32 and returns the new value.
+func (f *Float32) Add(s float32) float32 {
+	for {
+		old := f.Load()
+		new := old + s
+		if f.CAS(old, new) {
+			return new
+		}
+	}
+}
 
-	// The wrapper ensures that all operations are atomic.
-	atom.Store(42)
-	fmt.Println(atom.Inc())
-	fmt.Println(atom.CAS(43, 0))
-	fmt.Println(atom.Load())
+// Sub atomically subtracts from the wrapped float32 and returns the new value.
+func (f *Float32) Sub(s float32) float32 {
+	return f.Add(-s)
+}
 
-	// Output:
-	// 43
-	// true
-	// 0
+// String encodes the wrapped value as a string.
+func (f *Float32) String() string {
+	// 'g' is the behavior for floats with %v.
+	return strconv.FormatFloat(float64(f.Load()), 'g', -1, 64)
 }

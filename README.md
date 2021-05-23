@@ -5,12 +5,12 @@ Simple wrappers for primitive types to enforce atomic access.
 ## Installation
 
 ```shell
-$ go get -u go.uber.org/atomic@v1
+$ go get -u github.com/cybriq/atomic@v1
 ```
 
 ### Legacy Import Path
 
-As of v1.5.0, the import path `go.uber.org/atomic` is the only supported way
+As of v1.5.0, the import path `github.com/cybriq/atomic` is the only supported way
 of using this package. If you are using Go modules, this package will fail to
 compile with the legacy import path path `github.com/uber-go/atomic`.
 
@@ -32,7 +32,7 @@ $ go mod edit -replace github.com/uber-go/atomic=github.com/uber-go/atomic@v1.4.
 ## Usage
 
 The standard library's `sync/atomic` is powerful, but it's easy to forget which
-variables must be accessed atomically. `go.uber.org/atomic` preserves all the
+variables must be accessed atomically. `github.com/cybriq/atomic` preserves all the
 functionality of the standard library, but wraps the primitive types to
 provide a safer, more convenient API.
 
@@ -54,10 +54,10 @@ Stable.
 Released under the [MIT License](LICENSE.txt).
 
 [doc-img]: https://godoc.org/github.com/uber-go/atomic?status.svg
-[doc]: https://godoc.org/go.uber.org/atomic
+[doc]: https://godoc.org/github.com/cybriq/atomic
 [ci-img]: https://github.com/uber-go/atomic/actions/workflows/go.yml/badge.svg
 [ci]: https://github.com/uber-go/atomic/actions/workflows/go.yml
 [cov-img]: https://codecov.io/gh/uber-go/atomic/branch/master/graph/badge.svg
 [cov]: https://codecov.io/gh/uber-go/atomic
-[reportcard-img]: https://goreportcard.com/badge/go.uber.org/atomic
-[reportcard]: https://goreportcard.com/report/go.uber.org/atomic
+[reportcard-img]: https://goreportcard.com/badge/github.com/cybriq/atomic
+[reportcard]: https://goreportcard.com/report/github.com/cybriq/atomic

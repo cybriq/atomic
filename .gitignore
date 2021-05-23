@@ -10,3 +10,5 @@ lint.log
 
 # Profiling output
 *.prof
+
+.idea/**
