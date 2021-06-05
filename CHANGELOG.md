@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.5.0] - 2019-10-29
 ### Changed
-- With Go modules, only the `go.uber.org/atomic` import path is supported now.
+- With Go modules, only the `hyntfjmdoqzgwdupr9wxybnros4uq8gmmqb1usg74kja6jrqd4pcq1/atomic` import path is supported now.
   If you need to use the old import path, please add a `replace` directive to
   your `go.mod`.
 
@@ -57,7 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add atomic `Float64` type.
 
 ### Changed
-- Support new `go.uber.org/atomic` import path.
+- Support new `hyntfjmdoqzgwdupr9wxybnros4uq8gmmqb1usg74kja6jrqd4pcq1/atomic` import path.
 
 ## [1.0.0] - 2016-07-18
 

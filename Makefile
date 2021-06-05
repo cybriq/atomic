@@ -10,8 +10,8 @@ GO_FILES ?= $(shell find . '(' -path .git -o -path vendor ')' -prune -o -name '*
 
 # Also update ignore section in .codecov.yml.
 COVER_IGNORE_PKGS = \
-	go.uber.org/atomic/internal/gen-atomicint \
-	go.uber.org/atomic/internal/gen-atomicwrapper
+	hyntfjmdoqzgwdupr9wxybnros4uq8gmmqb1usg74kja6jrqd4pcq1/atomic/internal/gen-atomicint \
+	hyntfjmdoqzgwdupr9wxybnros4uq8gmmqb1usg74kja6jrqd4pcq1/atomic/internal/gen-atomicwrapper
 
 .PHONY: build
 build:

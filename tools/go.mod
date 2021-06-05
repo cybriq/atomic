@@ -1,4 +1,4 @@
-module go.uber.org/atomic/tools
+module hyntfjmdoqzgwdupr9wxybnros4uq8gmmqb1usg74kja6jrqd4pcq1/atomic/tools
 
 require (
 	golang.org/x/lint v0.0.0-20190930215403-16217165b5de
