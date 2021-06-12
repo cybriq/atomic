@@ -10,8 +10,8 @@ GO_FILES ?= $(shell find . '(' -path .git -o -path vendor ')' -prune -o -name '*
 
 # Also update ignore section in .codecov.yml.
 COVER_IGNORE_PKGS = \
-	hyntfjmdoqzgwdupr9wxybnros4uq8gmmqb1usg74kja6jrqd4pcq1/atomic/internal/gen-atomicint \
-	hyntfjmdoqzgwdupr9wxybnros4uq8gmmqb1usg74kja6jrqd4pcq1/atomic/internal/gen-atomicwrapper
+	github.com/cybriq/atomic/internal/gen-atomicint \
+	github.com/cybriq/atomic/internal/gen-atomicwrapper
 
 .PHONY: build
 build:
